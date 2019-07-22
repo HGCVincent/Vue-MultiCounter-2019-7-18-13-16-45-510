@@ -7,11 +7,13 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import CounterSum from './components/CounterSum'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+      CounterSum
   }
 }
 </script>

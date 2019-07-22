@@ -5,7 +5,7 @@
         <div v-for="n of parseInt(inputNumber)" :key="n">
             <CounterGroup v-on:calculate="calculate"></CounterGroup>
         </div>
-		<CounterSum :counterSum = "totalCount"></CounterSum>
+		<CounterSum></CounterSum>
     </div>
 </template>
 
@@ -17,7 +17,6 @@
         data() {
             return {
                 inputNumber : 0,
-                totalCount: 0,
                 counterNumber: []
             };
         },
@@ -28,13 +27,13 @@
         name: 'HelloWorld',
         methods: {
           calculate (number) {
-              this.totalCount +=number;
+              this.$store.state.totalCount += number;
 
           }
         },
         watch: {
             inputNumber () {
-                this.totalCount = 0;
+                this.$store.state.totalCount = 0;
             }
         }
         }
